@@ -31,3 +31,5 @@ dependencies {
     implementation 'com.google.api-client:google-api-client:1.23.0'
     implementation 'com.google.http-client:google-http-client-android:1.23.0'
 }
+
+appengine.tools.cloudSdkHome = "C:\\Program Files (x86)\\Google\\Cloud SDK\\google-cloud-sdk"
