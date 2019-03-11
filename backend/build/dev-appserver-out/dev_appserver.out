@@ -1,0 +1,29 @@
+Warning: Google App Engine Java 7 runtime is deprecated.
+Warning: See https://cloud.google.com/appengine/docs/deprecations/java7
+Feb 28, 2019 8:29:23 AM java.util.prefs.WindowsPreferences <init>
+WARNING: Could not open/create prefs root node Software\JavaSoft\Prefs at root 0x80000002. Windows RegCreateKeyEx(...) returned error code 5.
+Feb 28, 2019 8:29:23 AM com.google.appengine.tools.development.SystemPropertiesManager setSystemProperties
+INFO: Overwriting system property key 'java.util.logging.config.file', value 'C:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\platform\google_appengine\google\appengine\tools\java\config\sdk\logging.properties' with value 'WEB-INF/logging.properties' from 'C:\Users\Ryemitan\Desktop\Dev\~Android\udacity\Projects\Term 2\1-Build-it-bigger\backend\build\exploded-backend\WEB-INF\appengine-web.xml'
+Feb 28, 2019 8:29:23 AM com.google.apphosting.utils.jetty.JettyLogger info
+INFO: Logging to JettyLogger(null) via com.google.apphosting.utils.jetty.JettyLogger
+Feb 28, 2019 7:29:24 AM com.google.appengine.tools.development.IsolatedAppClassLoader checkWorkingDirectory
+WARNING: Your working directory, (C:\Users\Ryemitan\Desktop\Dev\~Android\udacity\Projects\Term 2\1-Build-it-bigger\backend) is not equal to your 
+web application root (C:\Users\Ryemitan\Desktop\Dev\~Android\udacity\Projects\Term 2\1-Build-it-bigger\backend\build\exploded-backend)
+You will not be able to access files from your working directory on the production server.
+
+Feb 28, 2019 7:29:25 AM com.google.apphosting.utils.jetty.JettyLogger info
+INFO: jetty-6.1.x
+Feb 28, 2019 7:29:36 AM com.google.apphosting.utils.jetty.JettyLogger info
+INFO: Started SelectChannelConnector@localhost:8080
+Feb 28, 2019 7:29:36 AM com.google.appengine.tools.development.AbstractModule startup
+INFO: Module instance default is running at http://localhost:8080/
+Feb 28, 2019 7:29:36 AM com.google.appengine.tools.development.AbstractModule startup
+INFO: The admin console is running at http://localhost:8080/_ah/admin
+Feb 28, 2019 8:29:36 AM com.google.appengine.tools.development.DevAppServerImpl doStart
+INFO: Dev App Server is now running
+Feb 28, 2019 8:29:59 AM com.google.appengine.repackaged.com.google.protobuf.UnsafeUtil supportsUnsafeByteBufferOperations
+WARNING: platform method missing - proto runtime falling back to safer methods: java.security.AccessControlException: access denied ("java.lang.RuntimePermission" "accessClassInPackage.sun.misc")
+Feb 28, 2019 8:29:59 AM com.google.appengine.repackaged.com.google.protobuf.UnsafeUtil supportsUnsafeArrayOperations
+WARNING: platform method missing - proto runtime falling back to safer methods: java.security.AccessControlException: access denied ("java.lang.RuntimePermission" "accessClassInPackage.sun.misc")
+Feb 28, 2019 8:30:01 AM com.google.appengine.tools.development.LocalResourceFileServlet doGet
+WARNING: No file found for: /favicon.ico
