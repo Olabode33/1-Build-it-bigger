@@ -61,6 +61,10 @@
                              <button class="btn btn-default btn-primary btn-group btn-lg"
                                      type="submit" id="helloButton">Say "Hello" &raquo;</button>
                           </span>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-primary btn-group btn-lg" type="button"
+                                    id="TellJokeButton">Tell a Joke</button>
+                        </span>
                     </div>
                 </form>
                 <br/>
@@ -106,6 +110,24 @@
           }
         );
         return false;
+      }
+
+      document.getElementById('TellJokeButton').onclick = function() {
+        gapi.client.myApi.tellJoke().execute(
+            function(bean) {
+                var outputAlertDiv = document.getElementById('outputAlert');
+                outputAlertDiv.style.visibility = 'visible';
+
+                if (!bean.error) {
+                  outputAlertDiv.className = 'alert alert-success';
+                  outputAlertDiv.innerHTML = '<h2>' + bean.result.data + '</h2>';
+                }
+                else if (bean.error) {
+                  outputAlertDiv.className = 'alert alert-danger';
+                  outputAlertDiv.innerHTML = '<b>Error Code: </b>' + bean.error.code + ' [' + bean.error.message + ']';
+                }
+            }
+        );
       }
     }
     // This is called initially

@@ -20,7 +20,15 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/instructions_text_view"
         android:onClick="tellJoke"
+        android:id="@+id/tellJokeButton"
         android:text="@string/button_text" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pbLoadingJoke"
+        android:layout_below="@id/tellJokeButton"
+        style="?android:attr/progressBarStyleLarge"/>
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"

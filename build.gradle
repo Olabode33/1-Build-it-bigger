@@ -20,3 +20,14 @@ allprojects {
         google()
     }
 }
+
+task startAppEngineAndTest(type: GradleBuild) {
+    dependsOn ":backend:appengineStart"
+    tasks = [':app:connectedAndroidTest']
+}
+
+task runAppEngineAndTest(type: GradleBuild) {
+    dependsOn "startAppEngineAndTest"
+
+    tasks = [":backend:appengineStop"]
+}
