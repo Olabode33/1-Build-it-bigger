@@ -8,7 +8,6 @@ buildscript {
     dependencies {
         classpath 'com.google.guava:guava:22.0'
         classpath 'com.android.tools.build:gradle:3.3.1'
-
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -21,13 +20,10 @@ allprojects {
     }
 }
 
-task startAppEngineAndTest(type: GradleBuild) {
-    dependsOn ":backend:appengineStart"
-    tasks = [':app:connectedAndroidTest']
-}
-
-task runAppEngineAndTest(type: GradleBuild) {
-    dependsOn "startAppEngineAndTest"
-
-    tasks = [":backend:appengineStop"]
+task startAppEngineTestAndStop(dependsOn: [':backend:appengineStart',
+                                      ':app:connectedAndroidTest',
+                                      ':backend:appengineStop']) {
+    doLast {
+        println 'done'
+    }
 }

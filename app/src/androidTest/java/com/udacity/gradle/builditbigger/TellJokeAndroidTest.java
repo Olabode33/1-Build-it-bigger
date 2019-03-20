@@ -9,6 +9,8 @@ import android.test.ActivityInstrumentationTestCase2;
 import android.test.InstrumentationTestCase;
 import android.util.Log;
 
+import com.udacity.gradle.builditbigger.Services.EndPointEventListener;
+
 import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
@@ -17,6 +19,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
 @RunWith(AndroidJUnit4.class)
@@ -41,18 +44,37 @@ public class TellJokeAndroidTest extends ActivityInstrumentationTestCase2<MainAc
         runTestOnUiThread(new Runnable() {
             @Override
             public void run() {
-                MainActivity.EndPointAsyncTask task = new MainActivity.EndPointAsyncTask();
-                task.execute(new Pair<Context, String>(mMainActivity, ""));
+                EndPointAsyncTask task = new EndPointAsyncTask(mMainActivity, new EndPointEventListener() {
+                    @Override
+                    public void onSuccess(String s) {
+
+                    }
+
+                    @Override
+                    public void onFailure(Exception e) {
+
+                    }
+
+                    @Override
+                    public void isLoading(Boolean b) {
+
+                    }
+                });
+
+                task.execute();
                 String s = "";
                 try {
                     s = task.get();
-                } catch (InterruptedException e) {
+
+                }
+                catch (InterruptedException e) {
                     e.printStackTrace();
                 } catch (ExecutionException e) {
                     e.printStackTrace();
                 }
                 Log.d("TestJOke", s);
                 assertThat(s, notNullValue());
+                assertEquals(s, "This joke is really funny and you are laughing hard.");
             }
         });
     }
